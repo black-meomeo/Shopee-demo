@@ -532,6 +532,15 @@
     font-weight: 500;
     color: var(--text-color);
     margin: 0;
+    line-height: 2rem;
+    max-height: 4rem;
+    overflow: hidden;
+    flex: 1;
+    padding-right:16px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-align: left;
 }
 .header__cart-item-price {
     font-size: 1.4rem;
@@ -728,47 +737,41 @@
     border-radius: 2px;
 }
 .category__heading {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    font-weight: 400;
     color: var(--text-color);
-    padding: 12px 16px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 16px 16px 0;
     margin-top: 0;
-}
-.category__heading-icon{
-    font-size: 1.4rem;
-    padding-right: 4px;
-    position: relative;
-    top: -1px;
+    text-transform: uppercase;
 }
 .category-list{
     padding: 0 0 8px 0;
     list-style: none;
-    margin-left: 9px;
 }
 .category-item{
-
+    position: relative;
+}
+.category-item:first-child::before{
+    display: none;
+}
+.category-item::before{
+    position: absolute;
+    content: "";
+    border-top: 1px solid #e1e1e1;
+    top: 0;
+    left: 20px;
+    right: 20px;
 }
 .category-item--active .category-item__link{
     color: #f53e2d;
-
-}
-.category-item--active .category-item__link::before{
-    content: "";
-    position: absolute;
-    left: 8px;
-    top: 50%;
-    transform: translateY(calc(-50% - 1px));
-    border-width: 4px;
-    border-style: solid;
-    border-color: transparent transparent transparent #f53e2d;
 
 }
 .category-item__link{
     position: relative;
     text-decoration: none;
     color: var(--text-color);
-    font-size: 1.5rem;
-    padding: 8px 16px;
+    font-size: 1.4rem;
+    padding: 8px 20px;
     display: block;
     transition: transform linear 0.2s;
 }
@@ -842,7 +845,7 @@
     background-color: var(--white-color);
     position: relative;
     margin-top: 10px;
-    border-radius: 0 0 2px 2px ;
+    border-radius: 2px ;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
     transition: transform linear 0.2s;
 }
@@ -855,6 +858,7 @@
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: 2px 2px 0 0;
 }
 .home-product-item__name{
     font-size: 1.4rem;
@@ -969,6 +973,7 @@ i.home-product-item__like-icon-fill{
     height: 36px;
     background-color: rgba(255, 216, 64, 0.94);
     text-align: center;
+    border-radius: 0 2px 0 0;
 
 }
 .home-product-item__sale-off::after{
@@ -993,4 +998,9 @@ i.home-product-item__like-icon-fill{
     font-weight: 600;
     position: relative;
     top: 3px;
+}
+/* pagination */
+.home-product__pagination{
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
