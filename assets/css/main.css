@@ -45,7 +45,7 @@
 .header__navbar-user-menu{
     position: absolute;
     background-color: var(--white-color);
-    top: 100%;
+    top: calc(100% + 6px);
     right: 0;
     z-index: 1;
     list-style: none;
@@ -61,7 +61,7 @@
     border-width: 10px 15px;
     border-style: solid;
     border-color: transparent transparent var(--white-color) transparent;
-    top: -11%;
+    top: -13%;
     right: 42%;
 }
 .header__navbar-user-item a:hover {
@@ -445,6 +445,13 @@
     cursor: pointer;
     
 }
+.header__cart-list::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 20px;
+    top: -12px;
+}
 .header__cart-notice{
     background-color: var(--white-color);
     color: #f53e2d;
@@ -471,6 +478,7 @@
     box-shadow: 0px 1px 3px 1px #e9e8e8c9;
     cursor: default;
     display: none;
+    z-index: 1;
 }
 .header__cart-no-cart-img{
     width: 54%;
@@ -494,6 +502,8 @@
 .header__cart-list-item{
     padding: 0;
     list-style: none;
+    height: 56vh;
+    overflow-y: auto;
 }
 .header__cart-item {
     display: flex;
@@ -624,6 +634,7 @@
     box-shadow: 0px 1px 3px 1px #e9e8e8c9;
     display: none;
     animation: fadeIn ease-in 0.2s;
+    z-index: 1;
 
 }
 .header__search-option-item{
@@ -673,6 +684,7 @@
     border-radius: 3px;
     box-shadow: 0px 1px 3px 1px #e9e8e8c9;
     display: none;
+    z-index: 1;
 }
 .header__search-history-heading{
     margin: 12px 12px;
